@@ -1,0 +1,39 @@
+# Maven build output (per service)
+target/
+*.class
+
+# Build script logs
+build-scripts/.build-logs/
+
+# Java / Maven artifacts
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+replay_pid*
+
+# IntelliJ IDEA: keep shared project config (e.g. vcs.xml), ignore user-specific files
+.idea/
+*.iws
+*.ipr
+out/
+
+# Eclipse / VS Code
+.classpath
+.project
+.settings/
+.factorypath
+.vscode/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+*.jks
+
+# OS files
+.DS_Store
+Thumbs.db
