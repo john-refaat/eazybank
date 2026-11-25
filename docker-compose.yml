@@ -1,0 +1,41 @@
+name: eazybank-microservices
+services:
+  accounts:
+    image: johnrstefanos/eazybank-accounts:s4
+    container_name: eazybank-accounts
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+          cpus: 0.5
+    networks:
+      - eazybank
+  loans:
+    image: johnrstefanos/eazybank-loans:s4
+    container_name: eazybank-loans
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+          cpus: 0.5
+    networks:
+      - eazybank
+  cards:
+    image: johnrstefanos/eazybank-cards:s4
+    container_name: eazybank-cards
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+          cpus: 0.5
+    networks:
+      - eazybank
+networks:
+  eazybank:
+    driver: "bridge"
